@@ -69,13 +69,6 @@ public struct Signup: View {
     }
 
     private func Signup() throws {
-        let atProto = ATProto(URL(string: "http://localhost:8080").unsafelyUnwrapped)  // lets actually do proper error handling later on
-        Task {
-            try await atProto.Post(
-                nsid: "com.atproto.server.createAccount",
-                val: UserLogin(handle: username, email: email, password: password))
-        }
-
         if goodPassword() {
             state.scene = .Login
         }
