@@ -1,0 +1,6 @@
+format_version = 3
+
+[apps.Cosmos]
+identifier = 'com.example.Cosmos'
+product = 'Cosmos'
+version = '0.1.0'
