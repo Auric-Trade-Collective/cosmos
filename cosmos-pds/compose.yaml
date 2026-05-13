@@ -3,7 +3,6 @@ services:
   caddy:
     container_name: caddy
     image: caddy:2
-    network_mode: host
     depends_on:
       - pds
     restart: unless-stopped
@@ -17,8 +16,10 @@ services:
   pds:
     container_name: pds
     image: ghcr.io/bluesky-social/pds:0.4
-    network_mode: host
     restart: unless-stopped
+    ports:
+      - "8156:80"
+      - "8157:443"
     volumes:
       - type: bind
         source: ./pds
@@ -28,7 +29,6 @@ services:
   watchtower:
     container_name: watchtower
     image: ghcr.io/nicholas-fedor/watchtower:latest
-    network_mode: host
     volumes:
       - type: bind
         source: /var/run/docker.sock
