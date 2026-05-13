@@ -8,7 +8,9 @@ cd pds
 rm compose.yaml
 cp ../compose.yaml .
 
+mkdir ./pds/
+
 docker compose up --build -d
 
 cd ../
-rm -rf pds
+# rm -rf pds

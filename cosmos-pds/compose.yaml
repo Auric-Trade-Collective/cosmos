@@ -9,10 +9,10 @@ services:
     restart: unless-stopped
     volumes:
       - type: bind
-        source: /pds/caddy/data
+        source: ./pds/caddy/data
         target: /data
       - type: bind
-        source: /pds/caddy/etc/caddy
+        source: ./pds/caddy/etc/caddy
         target: /etc/caddy
   pds:
     container_name: pds
@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
     volumes:
       - type: bind
-        source: /pds
+        source: ./pds
         target: /pds
     env_file:
       - ./sample.env
