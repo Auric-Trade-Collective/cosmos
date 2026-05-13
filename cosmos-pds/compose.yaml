@@ -18,8 +18,7 @@ services:
     image: ghcr.io/bluesky-social/pds:0.4
     restart: unless-stopped
     ports:
-      - "8156:80"
-      - "8157:443"
+      - "8157:3000"
     volumes:
       - type: bind
         source: ./pds
