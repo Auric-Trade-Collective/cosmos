@@ -3,8 +3,8 @@
 # env variables
 PDS_HOSTNAME="pds.cosmos.aurictradecollective.org"
 PDS_JWT_SECRET=$(openssl rand -hex 16)
-PDS_ADMIN_PASSWORD=$(openssl ecparam --name secp256k1 --genkey --noout --outform DER | tail --bytes=+8 | head --bytes=32 | xxd --plain --cols 32)
-PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX=$(openssl rand -hex 64)
+PDS_ADMIN_PASSWORD=$(openssl rand -hex 32)
+PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX=$(openssl ecparam --name secp256k1 --genkey --noout --outform DER | tail --bytes=+8 | head --bytes=32 | xxd --plain --cols 32)
 PDS_DATA_DIRECTORY=/pds
 PDS_BLOBSTORE_DISK_LOCATION=/pds/blocks
 PDS_BLOB_UPLOAD_LIMIT=104857600
